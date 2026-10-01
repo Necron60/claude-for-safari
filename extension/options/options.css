@@ -1,0 +1,170 @@
+body {
+  min-height: 100vh;
+  padding: 32px 16px 48px;
+}
+
+main {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.head img {
+  border-radius: 10px;
+}
+
+h1 {
+  margin: 0 0 2px;
+  font: 600 22px/1.2 var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card {
+  margin-bottom: 14px;
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  margin: 10px 0 4px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+strong {
+  display: block;
+  font-weight: 500;
+}
+
+small {
+  display: block;
+  margin-top: 1px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.option,
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.option + .option,
+.row + .row {
+  border-top: 1px solid var(--border);
+}
+
+.option {
+  cursor: pointer;
+}
+
+.option input {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.row > span:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+select {
+  flex: none;
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+}
+
+.button {
+  flex: none;
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+.button:hover {
+  background: var(--accent-hover);
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 16px;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.keys dt {
+  display: flex;
+  gap: 3px;
+}
+
+.keys dd {
+  margin: 0;
+}
+
+kbd {
+  min-width: 22px;
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  font: 12px/1.3 var(--font);
+  text-align: center;
+}
+
+.note {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.saved {
+  min-height: 1.4em;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  transition: opacity 0.3s;
+}
+
+@media (max-width: 480px) {
+  .row {
+    flex-wrap: wrap;
+  }
+}

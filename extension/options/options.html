@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude for Safari Settings</title>
+  <link rel="stylesheet" href="../shared/theme.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <header class="head">
+      <img src="../icons/icon-128.png" width="44" height="44" alt="">
+      <div>
+        <h1>Claude for Safari</h1>
+        <p>Uses the claude.ai account you're signed into in Safari. No API key needed.</p>
+      </div>
+    </header>
+
+    <form id="settings">
+      <section class="card">
+        <h2>Where Claude opens</h2>
+        <label class="option">
+          <input type="radio" name="openMode" value="tab">
+          <span><strong>New tab</strong><small>Next to the page you're on.</small></span>
+        </label>
+        <label class="option">
+          <input type="radio" name="openMode" value="reuse">
+          <span><strong>My Claude tab</strong><small>Reuses an open claude.ai tab, or opens one if there isn't one.</small></span>
+        </label>
+        <label class="option">
+          <input type="radio" name="openMode" value="window">
+          <span><strong>Side window</strong><small>A narrow window along the right edge, so you can read and chat side by side.</small></span>
+        </label>
+      </section>
+
+      <section class="card">
+        <h2>Sending</h2>
+        <div class="row">
+          <span><strong>Send automatically</strong><small>Turn off to review the prompt in Claude before it's sent.</small></span>
+          <label class="switch"><input type="checkbox" name="autoSend"><span class="visually-hidden">Send automatically</span></label>
+        </div>
+        <div class="row">
+          <span><strong>Include the current page by default</strong><small>Pre-selects “This page” in the popup.</small></span>
+          <label class="switch"><input type="checkbox" name="includePage"><span class="visually-hidden">Include the current page by default</span></label>
+        </div>
+        <div class="row">
+          <span><strong>Page text limit</strong><small>Longer pages are cut off at this length.</small></span>
+          <select name="maxPageChars">
+            <option value="20000">20,000 characters</option>
+            <option value="60000">60,000 characters</option>
+            <option value="150000">150,000 characters</option>
+          </select>
+        </div>
+      </section>
+    </form>
+
+    <section class="card">
+      <h2>claude.ai access</h2>
+      <div class="row">
+        <span id="access-status"><strong>Checking…</strong></span>
+        <button type="button" class="button" id="grant-access" hidden>Allow</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Shortcuts</h2>
+      <dl class="keys">
+        <dt><kbd>⌥</kbd><kbd>⇧</kbd><kbd>C</kbd></dt><dd>Open the popup</dd>
+        <dt><kbd>⌥</kbd><kbd>⇧</kbd><kbd>S</kbd></dt><dd>Summarize the current page</dd>
+        <dt><kbd>⌥</kbd><kbd>⇧</kbd><kbd>N</kbd></dt><dd>New Claude chat</dd>
+      </dl>
+      <p class="note">Right-click selected text, a link or the page for more Claude actions.</p>
+    </section>
+
+    <p class="saved" id="saved" role="status" aria-live="polite"></p>
+  </main>
+
+  <script src="../shared/common.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

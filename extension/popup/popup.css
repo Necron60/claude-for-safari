@@ -1,0 +1,257 @@
+body {
+  width: 360px;
+  padding: 12px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font: 600 16px/1 var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.text-button,
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.icon-button {
+  width: 28px;
+  justify-content: center;
+  padding: 0;
+}
+
+.text-button:hover,
+.icon-button:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 8px 8px 8px 12px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  font-size: 12px;
+}
+
+.banner button {
+  flex: none;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+.composer {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.composer:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.composer textarea {
+  display: block;
+  width: 100%;
+  min-height: 64px;
+  max-height: 200px;
+  padding: 11px 12px 4px;
+  border: 0;
+  outline: none;
+  resize: none;
+  background: transparent;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.composer textarea::placeholder {
+  color: var(--muted);
+}
+
+.composer-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px 8px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 100%;
+  height: 26px;
+  padding: 0 9px 0 7px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.chip span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chip .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chip:hover {
+  background: var(--surface-2);
+}
+
+.chip:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.chip:has(input:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.chip:has(input:disabled) {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.send {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--accent);
+  color: var(--on-accent);
+  transition: background 0.12s, opacity 0.12s;
+}
+
+.send .icon {
+  stroke-width: 2;
+}
+
+.send:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.send:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.actions button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--surface-2);
+  text-align: left;
+  font-size: 12.5px;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.actions button .icon {
+  color: var(--accent);
+}
+
+.actions button:hover:not(:disabled) {
+  background: var(--surface-hover);
+}
+
+.actions button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.foot .switch {
+  color: var(--text);
+}
+
+.hint kbd {
+  font: inherit;
+}

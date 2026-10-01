@@ -1,0 +1,124 @@
+:root {
+  color-scheme: light dark;
+  --bg: #faf9f5;
+  --surface: #ffffff;
+  --surface-2: #f0eee6;
+  --surface-hover: #e8e5da;
+  --border: #e0dccf;
+  --text: #1f1e1d;
+  --muted: #73716a;
+  --accent: #c96442;
+  --accent-hover: #b4573a;
+  --accent-soft: rgba(201, 100, 66, 0.12);
+  --on-accent: #ffffff;
+  --focus: rgba(201, 100, 66, 0.4);
+  --shadow: 0 1px 2px rgba(31, 30, 29, 0.06), 0 2px 8px rgba(31, 30, 29, 0.04);
+  --radius: 12px;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --font-display: ui-serif, "New York", Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #262624;
+    --surface: #30302e;
+    --surface-2: #383835;
+    --surface-hover: #42413d;
+    --border: #47463f;
+    --text: #f5f4ef;
+    --muted: #a6a39a;
+    --accent: #d97757;
+    --accent-hover: #e48a6c;
+    --accent-soft: rgba(217, 119, 87, 0.18);
+    --on-accent: #1f1e1d;
+    --focus: rgba(217, 119, 87, 0.45);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.45 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch input {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 28px;
+  height: 16px;
+  margin: 0;
+  flex: none;
+  border-radius: 999px;
+  background: var(--border);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.switch input::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s;
+}
+
+.switch input:checked {
+  background: var(--accent);
+}
+
+.switch input:checked::after {
+  transform: translateX(12px);
+}

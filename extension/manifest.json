@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "Claude for Safari",
+  "short_name": "Claude",
+  "version": "1.0.0",
+  "description": "Ask Claude about any page, selection or link, using your own claude.ai account.",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png",
+    "256": "icons/icon-256.png",
+    "512": "icons/icon-512.png"
+  },
+  "action": {
+    "default_title": "Ask Claude",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/toolbar-16.png",
+      "19": "icons/toolbar-19.png",
+      "32": "icons/toolbar-32.png",
+      "38": "icons/toolbar-38.png",
+      "48": "icons/toolbar-48.png"
+    }
+  },
+  "background": {
+    "scripts": ["shared/common.js", "background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["content/claude-bridge.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "options/options.html"
+  },
+  "permissions": ["activeTab", "scripting", "contextMenus", "storage"],
+  "host_permissions": ["https://claude.ai/*"],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+C", "mac": "Alt+Shift+C" },
+      "description": "Open the Claude popup"
+    },
+    "summarize-page": {
+      "suggested_key": { "default": "Alt+Shift+S", "mac": "Alt+Shift+S" },
+      "description": "Summarize the current page with Claude"
+    },
+    "open-claude": {
+      "suggested_key": { "default": "Alt+Shift+N", "mac": "Alt+Shift+N" },
+      "description": "Open a new Claude chat"
+    }
+  }
+}
